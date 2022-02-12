@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .loginPage {
+        justify-content: center;
+        padding-top: 10%;
+      }
+
+      body {
+        background: #8e2de2; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #4a00e0,
+          #8e2de2
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #4a00e0,
+          #8e2de2
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row loginPage">
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <div class="row">Welcome to Furniture site</div>
+          <div class="row" style="padding-top: 20px">
+            <form action="javascript:login()" method="post">
+              <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="emailname"
+                  placeholder="Enter Email"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="Enter Password"
+                  required
+                />
+              </div>
+              <div class="mb-3" style="text-align: end">
+                <button type="submit" class="btn btn-primary">Login</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function login() {
+        let email = document.getElementById("emailname").value;
+        localStorage.setItem("email", email);
+        localStorage.setItem("isLogin", "true");
+        window.location = "index.html";
+      }
+    </script>
+  </body>
+</html>
